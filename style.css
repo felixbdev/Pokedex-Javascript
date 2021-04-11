@@ -1,12 +1,12 @@
-@import url('http://fonts.cdnfonts.com/css/pokemon-fire-red');
 
-.body{
-    margin: 0;
-    background-color: rgba(221, 193, 193, 0.582);
+
+body{
+    background: rgb(237,236,236);
+    background: linear-gradient(90deg, rgba(237,236,236,1) 0%, rgba(200,241,255,1) 45%, rgba(132,219,236,0.7402766038055848) 100%);
 }
 *{
     
-    font-family: 'Pokemon Fire Red';
+    font-family: 'Lato', sans-serif;
     font-size: 21px;
     text-transform: uppercase;
 }
@@ -14,6 +14,7 @@
 .cards{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: #fff;
+    border-radius: 12px;
 
 }
 

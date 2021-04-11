@@ -8,29 +8,29 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 const fetchData = async() => {
     try {
-
-        const data = await fetch(`https://pokeapi.co/api/v2/pokemon/`)
-        const res = await data.json()
-        pintarPokemones(res.results)
-        console.log(res)
+        for (let index = 1; index < 899; index++) {
+            const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${index}/`)
+            const res = await data.json()
+            pintarPokemon(res)
+            //console.log(res.name)
+        }
     } catch (error) {
         console.log(error)
     }
 }
 
-const pintarPokemones = res =>{
-    res.forEach(pokeData)
-    cards.appendChild(fragment)
+const pintarPokemon = data =>{
+    //console.log(data)
+    //console.log(data.sprites.front_default)
+    let pokeImg = data.sprites.front_default
+    //console.log(pokeImg)
+    const clone = template.cloneNode(true)
+    clone.querySelector('h5').textContent = data.name
+    clone.querySelector('span').textContent = data.id
+    clone.querySelector('img').setAttribute('src', pokeImg)
+    cards.appendChild(clone)    
 }
 
-function pokeData(item, index){
-    const clone = template.cloneNode(true)
-        clone.querySelector('img').setAttribute('src', `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index+1}.png`)
-        clone.querySelector('h5').textContent = `${item.name}`
-        clone.querySelector('span').textContent = `N° ${index+1}`
-        console.log(index)
-        fragment.appendChild(clone)
-    }
 
 
 
