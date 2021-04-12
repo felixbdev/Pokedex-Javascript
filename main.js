@@ -26,7 +26,7 @@ const pintarPokemon = data =>{
     //console.log(pokeImg)
     const clone = template.cloneNode(true)
     clone.querySelector('h5').textContent = data.name
-    clone.querySelector('span').textContent = data.id
+    clone.querySelector('span').textContent = `N° ${data.id}`
     clone.querySelector('img').setAttribute('src', pokeImg)
     cards.appendChild(clone)    
 }
